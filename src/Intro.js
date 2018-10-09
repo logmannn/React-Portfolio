@@ -1,0 +1,205 @@
+import React, { Component } from "react";
+import styled from "styled-components";
+import LargeLetters from "./LargeLetters";
+import Delay from "react-delay-render";
+import { Spring, animated } from "react-spring";
+
+const ContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+
+  display: flex;
+  justify-content: center;
+
+  z-index: 3;
+`;
+
+const Content = styled.div`
+  width: 100%;
+  max-width: 1170px;
+
+  color: #fff;
+
+  align-items: center;
+  display: flex;
+
+  @media only screen and (max-width: 1024px) {
+    max-width: 975px !important;
+  }
+
+  @media only screen and (max-width: 1199px) {
+    max-width: 995px;
+  }
+`;
+
+const Introduction = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  padding-left: 60px;
+`;
+
+const AboutButton = styled.div`
+  white-space: nowrap;
+
+  padding-bottom: 1rem;
+
+  display: table;
+
+  overflow: hidden;
+
+  position: relative;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  padding-right: 1.5rem;
+  transition: padding-right 0.25s ease;
+
+  &:hover {
+    padding-right: 2rem;
+  }
+`;
+
+const Title = styled.div`
+  font-style: italic;
+
+  display: table;
+
+  overflow: hidden;
+
+  position: relative;
+`;
+
+const DevName = styled.div`
+  font-weight: bold;
+
+  display: table;
+
+  overflow: hidden;
+
+  position: relative;
+
+  padding-bottom: 0;
+`;
+
+const SlideAnimation = styled(animated.div)`
+  background: white;
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: inline-block;
+
+  transition: transform cubic-bezier(0.03, 0.05, 0.84);
+`;
+
+const AboutButtonAnimation = styled.div`
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+
+  background: linear-gradient(270deg, #f06449, #ef3636);
+  transition: background 0.25s ease;
+
+  &:hover {
+    background: linear-gradient(270deg, #f06449, #ef3636);
+  }
+`;
+
+const Arrow = styled.svg`
+  width: 36px;
+  position: absolute;
+
+  top: 3px;
+  right: 0;
+
+  fill: white;
+`;
+
+class Intro extends Component {
+  render() {
+    return (
+      <>
+        <ContentWrapper>
+          <Content>
+            <Introduction>
+              <DevName id="devName" className="devName rem2margin">
+                Logan Tanous
+                <Spring
+                  delay={200}
+                  from={{ transform: "translateX(0%)" }}
+                  to={{ transform: "translateX(100%)" }}
+                >
+                  {({ transform }) => (
+                    <SlideAnimation
+                      style={{
+                        transform
+                      }}
+                    />
+                  )}
+                </Spring>
+              </DevName>
+              <Title className="relative noOverflow rem2margin">
+                Web Developer{" "}
+                <Spring
+                  delay={200}
+                  from={{ transform: "translateX(0%)" }}
+                  to={{ transform: "translateX(100%)" }}
+                >
+                  {({ transform }) => (
+                    <SlideAnimation
+                      style={{
+                        transform
+                      }}
+                    />
+                  )}
+                </Spring>
+              </Title>
+              <AboutButton className="relative noOverflow">
+                <AboutButtonAnimation>
+                  About Me{" "}
+                  <Spring
+                    delay={200}
+                    from={{ transform: "translateX(0%)" }}
+                    to={{ transform: "translateX(100%)" }}
+                  >
+                    {({ transform }) => (
+                      <SlideAnimation
+                        style={{
+                          transform
+                        }}
+                      />
+                    )}
+                  </Spring>
+                </AboutButtonAnimation>
+                <span className="button-icon">
+                  <Arrow
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 476.213 476.213"
+                  >
+                    <path d="M405.606 167.5l-21.212 21.213 34.393 34.393H0v30h418.787L384.394 287.5l21.212 21.213 70.607-70.607" />
+                  </Arrow>
+                </span>
+              </AboutButton>
+            </Introduction>
+          </Content>
+        </ContentWrapper>
+        <LargeLetters />
+      </>
+    );
+  }
+}
+
+// export default Intro;
+export default Delay({ delay: 1500 })(Intro);

@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #1c1d25;
+  background-color: #1c3e6d;
   /* background-color: #fff; */
 }
 
@@ -65,23 +65,13 @@ body {
   justify-content: center;
 }
 
-.label {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: rgba(0, 0, 0, 0.1);
-  padding: 5px;
-  text-align: right;
-  /* border-radius: 5px; */
-}
-
 .circle {
   position: absolute;
   top: 50%;
   left: 50%;
   width: 200%;
   height: 200%;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background: #1c1d25;
   will-change: transform;
   justify-content: center;
@@ -89,13 +79,16 @@ body {
   display: flex;
 }
 
-h1 {
+.devName {
   font-size: 4.8rem;
   color: #fff;
 }
 
 .rem2margin {
-  margin-bottom: 2rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+
+  margin-bottom: 0.75rem;
 }
 
 .overlay {
@@ -112,6 +105,10 @@ h1 {
   margin-left: 2rem;
 }
 
+.relative {
+  position: relative;
+}
+
 @media only screen and (max-width: 1599px) {
   .letter {
     max-height: 245px;
@@ -121,29 +118,42 @@ h1 {
 
 @media only screen and (max-width: 1024px) {
   .rem2margin {
-    margin-bottom: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    margin-bottom: 0.75rem;
   }
 }
 
 @media only screen and (max-width: 899px) {
-  h1 {
+  .devName {
     font-size: 3.2rem;
   }
 }
 
 @media only screen and (max-width: 699px) {
-  h1 {
+  .devName {
     font-size: 2.2rem;
+
+    padding-top: 1.5rem;
   }
 
   .letter {
-    margin-top: 3rem;
+    margin-top: 2.4rem;
   }
 }
 
 @media only screen and (max-width: 450px) {
+  #devName {
+    padding-top: 0.5rem;
+  }
+
+  .rem2margin {
+    padding-top: 0;
+  }
+
   .letter {
-    margin-top: 1.5rem;
+    margin-top: 1.2rem;
     position: absolute;
     right: 0;
   }
