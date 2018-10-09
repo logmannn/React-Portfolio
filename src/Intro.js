@@ -2,7 +2,13 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import LargeLetters from "./LargeLetters";
 import Delay from "react-delay-render";
-import { Spring, animated } from "react-spring";
+import {
+  Spring,
+  animated,
+  AnimatedValue,
+  controller as spring
+} from "react-spring";
+import CanvasBackground from "./CanvasBackground";
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -12,8 +18,6 @@ const ContentWrapper = styled.div`
 
   display: flex;
   justify-content: center;
-
-  z-index: 3;
 `;
 
 const Content = styled.div`
@@ -39,6 +43,12 @@ const Introduction = styled.div`
   flex-direction: column;
 
   padding-left: 60px;
+
+  position: relative;
+
+  z-index: 4;
+
+  pointer-events: none;
 `;
 
 const AboutButton = styled.div`
@@ -55,6 +65,7 @@ const AboutButton = styled.div`
   font-weight: bold;
 
   cursor: pointer;
+  pointer-events: all;
 
   padding-right: 1.5rem;
   transition: padding-right 0.25s ease;
@@ -103,7 +114,7 @@ const SlideAnimation = styled(animated.div)`
   transition: transform cubic-bezier(0.03, 0.05, 0.84);
 `;
 
-const AboutButtonAnimation = styled.div`
+const AboutButtonAnimation = styled(animated.div)`
   padding-left: 1.5rem;
   padding-right: 1.5rem;
   padding-top: 0.75rem;
@@ -127,10 +138,21 @@ const Arrow = styled.svg`
   fill: white;
 `;
 
+const animation = new AnimatedValue();
+const hover = () =>
+  spring(animation, {
+    to: "linear-gradient(270deg, #ef3636, #f06449)"
+  }).start();
+const unhover = () =>
+  spring(animation, {
+    to: "linear-gradient(270deg, #f06449, #ef3636)"
+  }).start();
+
 class Intro extends Component {
   render() {
     return (
       <>
+        <CanvasBackground />
         <ContentWrapper>
           <Content>
             <Introduction>
@@ -167,7 +189,11 @@ class Intro extends Component {
                 </Spring>
               </Title>
               <AboutButton className="relative noOverflow">
-                <AboutButtonAnimation>
+                <AboutButtonAnimation
+                  onMouseOver={hover}
+                  onMouseOut={unhover}
+                  style={{ background: animation }}
+                >
                   About Me{" "}
                   <Spring
                     delay={200}
@@ -183,6 +209,7 @@ class Intro extends Component {
                     )}
                   </Spring>
                 </AboutButtonAnimation>
+
                 <span className="button-icon">
                   <Arrow
                     xmlns="http://www.w3.org/2000/svg"

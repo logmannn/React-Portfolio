@@ -7,7 +7,6 @@ const LettersCenter = styled.div`
   display: flex;
   justify-content: center;
   position: relative;
-  z-index: 2;
 `;
 
 const LettersWrapper = styled.div`
@@ -24,9 +23,10 @@ const LetterWrapper = styled.div`
   align-items: center;
   height: 100vh;
   justify-content: center;
-  z-index: -1;
+  z-index: 3;
   position: relative;
   width: 100%;
+  pointer-events: none;
 `;
 
 const LetterLWrapper = styled(MtSvgLines)`
