@@ -3,9 +3,7 @@ import "./App.css";
 import Intro from "./Intro";
 import SlideCover from "./SlideCover";
 import Loading from "./Loading";
-// import { Spring } from "react-spring";
-// import { Spring, animated } from "react-spring";
-// import styled from "styled-components";
+import Header from "./Header";
 
 class App extends Component {
   state = { value: 0 };
@@ -19,6 +17,7 @@ class App extends Component {
       <div className="App">
         <Loading />
         <SlideCover />
+        <Header />
         <Intro />
       </div>
     );

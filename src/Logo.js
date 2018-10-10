@@ -1,41 +1,37 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import MtSvgLines from "react-mt-svg-lines";
-import Delay from "react-delay-render";
 
 const LettersCenter = styled.div`
-  width: 100%;
+  width: 82px;
   display: flex;
   justify-content: center;
-  position: relative;
+  position: absolute;
+  z-index: 5;
 `;
 
 const LettersWrapper = styled.div`
   position: relative;
   display: flex;
   width: 100%;
-  height: 100vh;
-  max-width: 1170px;
-  justify-content: center;
+  height: 60px;
+  max-width: 100px;
 `;
 
 const LetterWrapper = styled.div`
   display: flex;
-  align-items: center;
-  height: 100vh;
-  justify-content: center;
+  height: 60px;
   z-index: 3;
   position: relative;
   width: 100%;
   pointer-events: none;
 `;
 
-const LetterLWrapper = styled(MtSvgLines)`
+const LetterLWrapper = styled.div`
   height: 100%;
-  max-height: 405px;
+  max-height: 47px;
   position: absolute;
   bottom: 0;
-  left: -60px;
+  left: 0px;
 `;
 
 const LetterL = styled.svg`
@@ -43,20 +39,15 @@ const LetterL = styled.svg`
   max-height: 410px;
   bottom: 0;
   position: absolute;
-
-  @media only screen and (max-width: 1599px) {
-    margin-left: 1.8rem;
-    max-height: 190px;
-  }
 `;
 
-const LetterT = styled(MtSvgLines)`
+const LetterT = styled.div`
   position: absolute;
   top: 0;
-  left: 0;
+  left: 8px;
 `;
 
-class LargeLetters extends Component {
+export default class Logo extends Component {
   render() {
     return (
       <LettersCenter>
@@ -70,25 +61,12 @@ class LargeLetters extends Component {
                 style={{ height: "100%" }}
               >
                 <LetterL viewBox="0 9 8 12" style={{ height: "100%" }}>
-                  <defs>
-                    <linearGradient
-                      x1=".258%"
-                      y1="49.75%"
-                      x2="101.258%"
-                      y2="49.75%"
-                      id="bgGradient"
-                    >
-                      <stop offset="0" stopColor="#2D2E83" />
-                      <stop offset="1" stopColor="#1D71B8" />
-                    </linearGradient>
-                  </defs>
-
                   <clipPath id="cut-off-top">
                     <polygon points="0,21 7.3,21 8,18.65 7,9.5 2,9.5" />
                   </clipPath>
                   <path
                     id="l"
-                    stroke="url(#bgGradient)"
+                    stroke="#FFF"
                     strokeWidth="1.8"
                     fill="none"
                     strokeLinecap="square"
@@ -108,23 +86,11 @@ class LargeLetters extends Component {
                 style={{ height: "100%" }}
               >
                 <svg viewBox="2.8 6.8 17.4 14" style={{ height: "100%" }}>
-                  <defs>
-                    <linearGradient
-                      x1=".258%"
-                      y1="49.75%"
-                      x2="101.258%"
-                      y2="49.75%"
-                      id="bgGradient"
-                    >
-                      <stop offset="0" stopColor="#2D2E83" />
-                      <stop offset="1" stopColor="#1D71B8" />
-                    </linearGradient>
-                  </defs>
                   <clipPath id="cut-off-bottom">
                     <polygon points="3.3,8.95 3.88,7 19.87,7 18.36,12 10,24" />
                   </clipPath>
                   <path
-                    stroke="url(#bgGradient)"
+                    stroke="#FFF"
                     strokeWidth="1.9"
                     fill="none"
                     d="M10,22L14.205,8L3,8L20,8"
@@ -139,5 +105,3 @@ class LargeLetters extends Component {
     );
   }
 }
-
-export default Delay({ delay: 300 })(LargeLetters);

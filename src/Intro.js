@@ -49,14 +49,16 @@ const Introduction = styled.div`
   z-index: 4;
 
   pointer-events: none;
+
+  overflow: hidden;
 `;
 
 const AboutButton = styled.div`
   white-space: nowrap;
 
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
 
-  display: table;
+  display: block;
 
   overflow: hidden;
 
@@ -67,11 +69,12 @@ const AboutButton = styled.div`
   cursor: pointer;
   pointer-events: all;
 
-  padding-right: 1.5rem;
-  transition: padding-right 0.25s ease;
+  max-width: 148px;
+
+  transition: max-width 0.25s ease;
 
   &:hover {
-    padding-right: 2rem;
+    max-width: 155px;
   }
 `;
 
@@ -83,6 +86,8 @@ const Title = styled.div`
   overflow: hidden;
 
   position: relative;
+
+  pointer-events: all;
 `;
 
 const DevName = styled.div`
@@ -95,6 +100,8 @@ const DevName = styled.div`
   position: relative;
 
   padding-bottom: 0;
+
+  pointer-events: all;
 `;
 
 const SlideAnimation = styled(animated.div)`
@@ -119,6 +126,8 @@ const AboutButtonAnimation = styled(animated.div)`
   padding-right: 1.5rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+
+  display: inline-block;
 
   background: linear-gradient(270deg, #f06449, #ef3636);
   transition: background 0.25s ease;
@@ -161,7 +170,7 @@ class Intro extends Component {
                 <Spring
                   delay={200}
                   from={{ transform: "translateX(0%)" }}
-                  to={{ transform: "translateX(100%)" }}
+                  to={{ transform: "translateX(101%)" }}
                 >
                   {({ transform }) => (
                     <SlideAnimation
@@ -177,7 +186,7 @@ class Intro extends Component {
                 <Spring
                   delay={200}
                   from={{ transform: "translateX(0%)" }}
-                  to={{ transform: "translateX(100%)" }}
+                  to={{ transform: "translateX(101%)" }}
                 >
                   {({ transform }) => (
                     <SlideAnimation
@@ -198,7 +207,7 @@ class Intro extends Component {
                   <Spring
                     delay={200}
                     from={{ transform: "translateX(0%)" }}
-                    to={{ transform: "translateX(100%)" }}
+                    to={{ transform: "translateX(101%)" }}
                   >
                     {({ transform }) => (
                       <SlideAnimation
