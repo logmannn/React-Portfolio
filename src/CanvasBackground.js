@@ -9,16 +9,7 @@ export default class CanvasBackground extends Component {
 
     // console.log(typeof can_w);
 
-    var ball = {
-        x: 0,
-        y: 0,
-        vx: 0,
-        vy: 0,
-        r: 0,
-        alpha: 1,
-        phase: 0
-      },
-      ball_color = {
+    var ball_color = {
         r: 27,
         g: 101,
         b: 173
@@ -26,12 +17,9 @@ export default class CanvasBackground extends Component {
       R = 2,
       balls = [],
       alpha_f = 0.03,
-      alpha_phase = 0,
       // Line
       link_line_width = 0.8,
       dis_limit = 260,
-      add_mouse_point = true,
-      mouse_in = false,
       mouse_ball = {
         x: 0,
         y: 0,
@@ -48,19 +36,14 @@ export default class CanvasBackground extends Component {
       switch (pos) {
         case "top":
           return [randomNumFrom(min, max), randomNumFrom(0.1, max)];
-          break;
         case "right":
           return [randomNumFrom(min, -0.1), randomNumFrom(min, max)];
-          break;
         case "bottom":
           return [randomNumFrom(min, max), randomNumFrom(min, -0.1)];
-          break;
         case "left":
           return [randomNumFrom(0.1, max), randomNumFrom(min, max)];
-          break;
         default:
           return;
-          break;
       }
     }
     function randomArrayItem(arr) {
@@ -84,7 +67,6 @@ export default class CanvasBackground extends Component {
             alpha: 1,
             phase: randomNumFrom(0, 10)
           };
-          break;
         case "right":
           return {
             x: can_w + R,
@@ -95,7 +77,6 @@ export default class CanvasBackground extends Component {
             alpha: 1,
             phase: randomNumFrom(0, 10)
           };
-          break;
         case "bottom":
           return {
             x: randomSidePos(can_w),
@@ -106,7 +87,6 @@ export default class CanvasBackground extends Component {
             alpha: 1,
             phase: randomNumFrom(0, 10)
           };
-          break;
         case "left":
           return {
             x: -R,
@@ -117,7 +97,8 @@ export default class CanvasBackground extends Component {
             alpha: 1,
             phase: randomNumFrom(0, 10)
           };
-          break;
+        default:
+          return;
       }
     }
     function randomSidePos(length) {
@@ -165,9 +146,6 @@ export default class CanvasBackground extends Component {
 
       balls = new_balls.slice(0);
     }
-
-    // loop alpha
-    function loopAlphaInf() {}
 
     // Draw lines
     function renderLines() {
@@ -258,13 +236,9 @@ export default class CanvasBackground extends Component {
 
     // Mouse effect
     canvas.addEventListener("mouseenter", function() {
-      console.log("mouseenter");
-      mouse_in = true;
       balls.push(mouse_ball);
     });
     canvas.addEventListener("mouseleave", function() {
-      console.log("mouseleave");
-      mouse_in = false;
       var new_balls = [];
       Array.prototype.forEach.call(balls, function(b) {
         if (!b.hasOwnProperty("type")) {
@@ -274,9 +248,9 @@ export default class CanvasBackground extends Component {
       balls = new_balls.slice(0);
     });
     canvas.addEventListener("mousemove", function(e) {
-      var e = e || window.event;
-      mouse_ball.x = e.pageX;
-      mouse_ball.y = e.pageY;
+      var e2 = e || window.event;
+      mouse_ball.x = e2.pageX;
+      mouse_ball.y = e2.pageY;
       // console.log(mouse_ball);
     });
   }

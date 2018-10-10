@@ -13,12 +13,6 @@ const Cover = styled(animated.div)`
   margin-bottom: 0.5rem;
 `;
 
-const LoadingWrapper = styled(Spring)`
-  width: 100%;
-  display: flex;
-  justify-content: center;
-`;
-
 const Wrap = styled.div`
   display: flex;
   width: 100%;
