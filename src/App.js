@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
-import Intro from "./Intro";
-import SlideCover from "./SlideCover";
-import Loading from "./Loading";
-import Header from "./Header";
+import Portfolio from "./Portfolio";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 class App extends Component {
   state = { value: 0 };
@@ -14,12 +12,11 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <Loading />
-        <SlideCover />
-        <Header />
-        <Intro />
-      </div>
+      <Router>
+        <div className="App">
+          <Route exact path="/" component={Portfolio} />
+        </div>
+      </Router>
     );
   }
 }

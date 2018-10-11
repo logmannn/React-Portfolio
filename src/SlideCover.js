@@ -9,7 +9,6 @@ const Cover = styled(animated.div)`
   top: 0px;
   left: 0px;
   background: #1c1d25;
-  padding: 5px;
   text-align: right;
   height: 100%;
   z-index: 2;

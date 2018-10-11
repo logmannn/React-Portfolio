@@ -9,6 +9,7 @@ import {
   controller as spring
 } from "react-spring";
 import CanvasBackground from "./CanvasBackground";
+import Matrix from "./Matrix";
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -163,8 +164,8 @@ class Intro extends Component {
       <>
         <CanvasBackground />
         <ContentWrapper>
-          <Content>
-            <Introduction>
+          <Content className="Content">
+            <Introduction className="Introduction">
               <DevName id="devName" className="devName rem2margin">
                 Logan Tanous
                 <Spring
@@ -182,7 +183,11 @@ class Intro extends Component {
                 </Spring>
               </DevName>
               <Title className="relative noOverflow rem2margin">
-                Web Developer{" "}
+                <Matrix
+                  text="Web Developer"
+                  columnHeight="3"
+                  framesPerSecond="30"
+                />
                 <Spring
                   delay={200}
                   from={{ transform: "translateX(0%)" }}
@@ -219,7 +224,7 @@ class Intro extends Component {
                   </Spring>
                 </AboutButtonAnimation>
 
-                <span className="button-icon">
+                <span className="button-icon Arrow">
                   <Arrow
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 476.213 476.213"

@@ -7,8 +7,6 @@ export default class CanvasBackground extends Component {
       can_h = parseInt(canvas.getAttribute("height")),
       ctx = canvas.getContext("2d");
 
-    // console.log(typeof can_w);
-
     var ball_color = {
         r: 27,
         g: 101,
@@ -52,7 +50,6 @@ export default class CanvasBackground extends Component {
     function randomNumFrom(min, max) {
       return Math.random() * (max - min) + min;
     }
-    console.log(randomNumFrom(0, 10));
     // Random Ball
     function getRandomBall() {
       var pos = randomArrayItem(["top", "right", "bottom", "left"]);
@@ -141,7 +138,6 @@ export default class CanvasBackground extends Component {
         // alpha change
         b.phase += alpha_f;
         b.alpha = Math.abs(Math.cos(b.phase));
-        // console.log(b.alpha);
       });
 
       balls = new_balls.slice(0);
@@ -223,7 +219,6 @@ export default class CanvasBackground extends Component {
       can_h = parseInt(canvas.getAttribute("height"));
     }
     window.addEventListener("resize", function(e) {
-      console.log("Window Resize...");
       initCanvas();
     });
 
@@ -251,7 +246,6 @@ export default class CanvasBackground extends Component {
       var e2 = e || window.event;
       mouse_ball.x = e2.pageX;
       mouse_ball.y = e2.pageY;
-      // console.log(mouse_ball);
     });
   }
 

@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Spring, animated } from "react-spring";
 import styled from "styled-components";
 import Delay from "react-delay-render";
 import Logo from "./Logo";
@@ -36,15 +35,15 @@ const NavLinks = styled.div`
 const NavLink = styled.a`
   color: #b0b2c3;
 
-  padding-bottom: 4px;
-  padding-top: 4px;
+  padding-bottom: 3px;
+  padding-top: 3px;
 
   font-weight: bold;
   font-size: 1.2rem;
 
   margin-left: 2.5rem;
 
-  transition: all 1s ease;
+  transition: all 0.5s ease;
 
   position: relative;
 
@@ -55,7 +54,7 @@ const NavLink = styled.a`
   &:after {
     content: " ";
     width: 100%;
-    height: 4px;
+    height: 3px;
     background: #f25757;
     position: absolute;
     left: 0;
@@ -65,7 +64,7 @@ const NavLink = styled.a`
   &:before {
     content: " ";
     width: 100%;
-    height: 4px;
+    height: 3px;
     background: #235aa6;
     position: absolute;
     left: 0;
@@ -79,7 +78,7 @@ const NavLink = styled.a`
     &:hover:after {
       content: " ";
       width: 100%;
-      height: 4px;
+      height: 3px;
       background: #f25757;
       position: absolute;
       left: 0;
@@ -90,7 +89,7 @@ const NavLink = styled.a`
     &:hover:before {
       content: " ";
       width: 100%;
-      height: 4px;
+      height: 3px;
       background: #235aa6;
       position: absolute;
       left: 0;
@@ -108,7 +107,9 @@ class Header extends Component {
           <Logo />
           <NavLinks>
             <NavLink className="NavLink" href="#work">
-              Projects
+              <span style={{ zIndex: "2", position: "relative" }}>
+                Projects
+              </span>
             </NavLink>
             <NavLink className="NavLink" href="#contact">
               Contact

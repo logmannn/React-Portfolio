@@ -7,7 +7,6 @@ const cover = progress => `${Math.round(progress * 100)}%`;
 const Cover = styled(animated.div)`
   position: relative;
   background: #fff;
-  padding: 5px;
   text-align: right;
   height: 100%;
   margin-bottom: 0.5rem;
