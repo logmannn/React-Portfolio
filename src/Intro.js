@@ -182,7 +182,7 @@ class Intro extends Component {
                   )}
                 </Spring>
               </DevName>
-              <Title className="relative noOverflow rem2margin">
+              <Title className="relative noOverflow">
                 <Matrix text="Web Developer" columnHeight="3" />
                 <Spring
                   delay={200}

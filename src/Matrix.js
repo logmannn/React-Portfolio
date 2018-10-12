@@ -4,8 +4,7 @@ import styled from "styled-components";
 const Letter = styled.div`
   color: #4fd673;
   text-shadow: 0 0 2px #4bcb62;
-  // transform: scaleX(-1);
-  font-style: normal;
+  font-style: italic;
   width: 10.08px;
   height: 18px;
 
@@ -20,7 +19,33 @@ const InnerItem = styled.div`
 
 const Flex = styled.div`
   display: flex;
+  position: absolute;
+
+  padding-top: 1px;
 `;
+
+const TitleSwap = styled.div`
+  position: relative;
+
+  padding-right: 1rem;
+
+  left: 0;
+  opacity: 0;
+  letter-spacing: 1px;
+
+  animation: 5s showMatrix 1s forwards;
+`;
+
+const Column = styled.div`
+  opacity: 1;
+
+  animation: hideMatrix 8s forwards;
+`;
+
+// const DrawContent = styled.div`
+//   // position: absolute;
+//   // left: 0;
+// `;
 
 export default class Matrix extends Component {
   constructor(props) {
@@ -176,45 +201,24 @@ export default class Matrix extends Component {
 
   tick = () => {
     let { draw, text, middle, randomSymbols, columnCheck } = this.state;
-    // letter at the end is half the opacity
-    // second character is lighter in color
-    // first character is an empty space
-    // real character is #ACFED7 color
 
     let random;
 
-    // If all the middle characters are correct stop
-
-    let middleCorrect = false;
-
     for (let i = 0; i < draw.length; i++) {
-      const finalChar = text.charAt(i);
-      const middleChar = draw[i][0][middle].toString();
+      if (this.state.counter < 75) {
+        const finalChar = text.charAt(i);
+        const middleChar = draw[i][0][middle].toString();
 
-      if (finalChar === middleChar) {
-        columnCheck[i] = true;
-        this.setState({ columnCheck });
-      }
-
-      if (columnCheck.every((val, i, arr) => val === arr[0])) {
-        // console.log("true");
-        middleCorrect = true;
-      }
-
-      if (middleCorrect !== true) {
         // if first spot and second spot don't have a character chance to generate random character in first spot
         if (
           draw[i][0][0].toString() === " " &&
           draw[i][0][1].toString() === " "
         ) {
-          random = Math.random() * 100;
-          if (random < 1) {
-            let randomChar =
-              randomSymbols[Math.floor(Math.random() * randomSymbols.length)];
-            if (draw[i][0][0] !== randomChar) {
-              draw[i][0][0] = randomChar;
-              this.setState({ draw });
-            }
+          let randomChar =
+            randomSymbols[Math.floor(Math.random() * randomSymbols.length)];
+          if (draw[i][0][0] !== randomChar) {
+            draw[i][0][0] = randomChar;
+            this.setState({ draw });
           }
         }
 
@@ -262,7 +266,7 @@ export default class Matrix extends Component {
       }
     }
 
-    if (this.state.counter < 1800) {
+    if (this.state.counter < 75) {
       this.setState({
         counter: this.state.counter + 1
       });
@@ -277,7 +281,7 @@ export default class Matrix extends Component {
     const { draw } = this.state;
 
     let drawContent = draw.map((item, index) => (
-      <div className="item" key={index}>
+      <Column className="item" key={index}>
         {item.map((innerItem, i) => (
           <InnerItem key={i}>
             {item[i].map((something, x) => (
@@ -285,9 +289,14 @@ export default class Matrix extends Component {
             ))}
           </InnerItem>
         ))}
-      </div>
+      </Column>
     ));
 
-    return <Flex>{drawContent}</Flex>;
+    return (
+      <div>
+        <Flex>{drawContent}</Flex>
+        <TitleSwap className="rem2margin">Web Developer</TitleSwap>
+      </div>
+    );
   }
 }
