@@ -69,7 +69,11 @@ class LargeLetters extends Component {
                 duration={2000}
                 style={{ height: "100%" }}
               >
-                <LetterL viewBox="0 9 8 12" style={{ height: "100%" }}>
+                <LetterL
+                  className="LetterL"
+                  viewBox="0 9 8 12"
+                  style={{ height: "100%" }}
+                >
                   <defs>
                     <linearGradient
                       x1=".258%"
@@ -107,7 +111,11 @@ class LargeLetters extends Component {
                 duration={2000}
                 style={{ height: "100%" }}
               >
-                <svg viewBox="2.8 6.8 17.4 14" style={{ height: "100%" }}>
+                <svg
+                  className="LetterT"
+                  viewBox="2.8 6.8 17.4 14"
+                  style={{ height: "100%" }}
+                >
                   <defs>
                     <linearGradient
                       x1=".258%"

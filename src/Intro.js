@@ -9,11 +9,11 @@ import {
   controller as spring
 } from "react-spring";
 import CanvasBackground from "./CanvasBackground";
-// import Matrix from "./Matrix";
 
 const ContentWrapper = styled.div`
   width: 100%;
   height: 100%;
+  min-height: 380px;
 
   position: absolute;
 
@@ -163,7 +163,7 @@ class Intro extends Component {
     return (
       <>
         <CanvasBackground />
-        <ContentWrapper>
+        <ContentWrapper className="ContentWrapper">
           <Content className="Content">
             <Introduction className="Introduction">
               <DevName id="devName" className="devName rem2margin">
