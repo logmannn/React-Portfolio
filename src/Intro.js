@@ -183,11 +183,7 @@ class Intro extends Component {
                 </Spring>
               </DevName>
               <Title className="relative noOverflow rem2margin">
-                <Matrix
-                  text="Web Developer"
-                  columnHeight="3"
-                  framesPerSecond="30"
-                />
+                <Matrix text="Web Developer" columnHeight="3" />
                 <Spring
                   delay={200}
                   from={{ transform: "translateX(0%)" }}
