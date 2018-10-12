@@ -9,7 +9,7 @@ import {
   controller as spring
 } from "react-spring";
 import CanvasBackground from "./CanvasBackground";
-import Matrix from "./Matrix";
+// import Matrix from "./Matrix";
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -182,8 +182,8 @@ class Intro extends Component {
                   )}
                 </Spring>
               </DevName>
-              <Title className="relative noOverflow">
-                <Matrix text="Web Developer" columnHeight="3" />
+              <Title className="relative noOverflow rem2margin">
+                Web Developer
                 <Spring
                   delay={200}
                   from={{ transform: "translateX(0%)" }}
