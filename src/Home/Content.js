@@ -149,9 +149,9 @@ const BottomArrowWrapper = styled.div`
   position: absolute;
   z-index: 10;
 
-  bottom: -5px;
+  bottom: -9px;
 
-  width: 41px;
+  width: 40px;
   height: 55px;
 `;
 
@@ -159,8 +159,6 @@ const BottomArrow = styled.a`
   position: absolute;
 
   cursor: pointer;
-
-  transition: opacity 0.35s ease 0.7s;
 
   width: 1px;
   height: 45px;
@@ -170,44 +168,58 @@ const BottomArrow = styled.a`
 
   padding-bottom: 0px;
 
-  transition: opacity 0.35s ease 0.7s;
+  animation: arrowUnHover .3s forwards;
 
-  animation: arrowUnHover 0.3s forwards;
+  &:after {
+    animation: arrowUnHoverAfter .3s forwards;
+  }
+  &:before {
+    animation: arrowUnHoverBefore .3s forwards;      
+  }
 
   &:hover {
-    animation: arrowHover 0.3s forwards;
+    animation: arrowHover .3s forwards;
+
+    &:hover:after {
+      animation: arrowHoverAfter .3s forwards;
+    }
+    &:hover:before {
+      animation: arrowHoverBefore .3s forwards;      
+    }
   }
 
   &:before {
     content: "";
-    transform: rotate(40deg);
+    transform: rotate(-90deg);
     opacity: 1;
     content: "";
     position: absolute;
     background: #f3f3f3;
     height: 1px;
     width: 10px;
-    left: 12px;
-    bottom: 1px;
+    left: 16px;
+    bottom: 3px;
     margin-right: 0;
     backface-visibility: hidden;
     transition: all 0.3s;
+    animation: animation: arrowUnHoverBefore .3s forwards;    
   }
 
   &:after {
     content: "";
-    transform: rotate(-40deg);
+    transform: rotate(-90deg);
     opacity: 1;
     content: "";
     position: absolute;
     background: #f3f3f3;
     height: 1px;
+    bottom: 3px;       
+    left: 16px 
     width: 10px;
-    left: 19px;
-    bottom: 1px;
     margin-right: 0;
     backface-visibility: hidden;
     transition: all 0.3s;
+    animation: animation: arrowUnHoverAfter .3s forwards;
   }
 `;
 

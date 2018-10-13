@@ -215,7 +215,7 @@ canvas {
     margin-left: 0px;
   }
   to {
-    width: 3px;
+    width: 2px;
     height: 35px;
     padding-bottom: 10px;
     margin-left: -1px;
@@ -225,7 +225,7 @@ canvas {
 
 @keyframes arrowUnHover {
   from {
-    width: 3px;
+    width: 2px;
     height: 35px;
     padding-bottom: 10px;
     margin-left: -1px;
@@ -237,6 +237,66 @@ canvas {
     padding-top: 10px;
     padding-bottom: 0px;
     margin-left: 0px;
+  }
+}
+
+@keyframes arrowHoverAfter {
+  from {
+    left: 16px;
+    bottom: 3px;
+    height: 1px;
+    transform: rotate(-90deg);
+  }
+  to {
+    left: 20px;
+    bottom: 13px;
+    height: 2px;
+    transform: rotate(-40deg);
+  }
+}
+
+@keyframes arrowUnHoverAfter {
+  from {
+    left: 20px;
+    bottom: 13px;
+    height: 2px;
+    transform: rotate(-40deg);
+  }
+  to {
+    left: 16px;
+    bottom: 2px;
+    height: 1px;
+    transform: rotate(-90deg);
+  }
+}
+
+@keyframes arrowHoverBefore {
+  from {
+    left: 16px;
+    bottom: 2px;
+    height: 1px;
+    transform: rotate(90deg);
+  }
+  to {
+    left: 12px;
+    bottom: 13px;
+    height: 2px;
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes arrowUnHoverBefore {
+  from {
+    left: 12px;
+    bottom: 13px;
+    height: 2px;
+    transform: rotate(40deg);
+  }
+  to {
+    left: 16px;
+    bottom: 2px;
+    height: 1px;
+    transform: rotate(90deg);
   }
 }
 
