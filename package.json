@@ -12,7 +12,7 @@
     "react-mt-svg-lines": "^0.9.0",
     "react-scripts": "2.0.4",
     "react-spring": "^5.9.2",
-    "styled-components": "^3.4.9"
+    "styled-components": "^3.4.10"
   },
   "scripts": {
     "start": "react-scripts start",

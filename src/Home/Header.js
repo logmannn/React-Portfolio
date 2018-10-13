@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import Delay from "react-delay-render";
-import Logo from "./Logo";
+import Logo from "../common/Logo";
 
 const NavContent = styled.div`
   position: absolute;

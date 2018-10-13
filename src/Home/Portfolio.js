@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import "../App.css";
 import Intro from "./Intro";
 import SlideCover from "./SlideCover";
 import Loading from "./Loading";

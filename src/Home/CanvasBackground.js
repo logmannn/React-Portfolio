@@ -120,6 +120,7 @@ export default class CanvasBackground extends Component {
           ctx.arc(b.x, b.y, R, 0, Math.PI * 2, true);
           ctx.closePath();
           ctx.fill();
+          // ctx.fillText("React", b.x, b.y);
         }
       });
     }
