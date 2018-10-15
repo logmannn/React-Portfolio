@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Arrow } from "../../common/Arrow";
 import styled from "styled-components";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import {
   Spring,
   animated,
@@ -19,6 +20,8 @@ const ContentWrapper = styled.div`
   justify-content: center;
 
   overflow: hidden;
+
+  left: 0;
 `;
 
 const ContentDiv = styled.div`
@@ -133,9 +136,11 @@ const AboutButtonAnimation = styled(animated.div)`
   }
 `;
 
-const AboutText = styled.div`
+const AboutText = styled(AnchorLink)`
   z-index: 2;
   position: relative;
+
+  display: flex;
 
   padding-left: 1.6rem;
   padding-right: 1.6rem;
@@ -143,6 +148,8 @@ const AboutText = styled.div`
   padding-bottom: 0.75rem;
 
   overflow: hidden;
+
+  color: white;
 `;
 
 const BottomArrowWrapper = styled.div`
@@ -155,7 +162,7 @@ const BottomArrowWrapper = styled.div`
   height: 55px;
 `;
 
-const BottomArrow = styled.a`
+const BottomArrow = styled(AnchorLink)`
   position: absolute;
 
   cursor: pointer;
@@ -284,7 +291,7 @@ export default class Content extends Component {
                 onMouseOut={unhover}
                 style={{ background: animation }}
               >
-                <AboutText>My Work</AboutText>{" "}
+                <AboutText href="#projects">My Work</AboutText>{" "}
                 <Spring
                   delay={200}
                   from={{ transform: "translateX(0%)" }}
@@ -307,7 +314,7 @@ export default class Content extends Component {
           </Introduction>
         </ContentDiv>
         <BottomArrowWrapper>
-          <BottomArrow href="#" className="button-icon Arrow">
+          <BottomArrow href="#projects" className="button-icon Arrow">
             <CssArrow />
           </BottomArrow>
         </BottomArrowWrapper>

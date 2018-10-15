@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 const Text = styled.div`
-  color: #282c34;
+  color: #4a4a4a;
 
   font-weight: bold;
-  font-size: 2rem;
-
-  margin-top: 3.125rem;
-  margin-bottom: 3.125rem;
+  font-size: 2.2rem;
 `;
 
 export default class Title extends Component {

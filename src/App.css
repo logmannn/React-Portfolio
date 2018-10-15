@@ -73,7 +73,7 @@ video {
 }
 
 body {
-  background-color: #fff;
+  background-color: #f1f1f1;
 }
 
 .App-header {
@@ -349,13 +349,13 @@ a {
 }
 
 @media only screen and (min-width: 75em) {
-  .header_content {
+  .main_content {
     width: 1170px;
   }
 }
 
 @media only screen and (max-width: 75em) {
-  .header_content {
+  .main_content {
     width: 100%;
     max-width: 1000px;
   }
@@ -376,7 +376,7 @@ a {
     margin-bottom: 0.75rem;
   }
 
-  .header_content {
+  .main_content {
     width: 100%;
     margin-left: 1.5rem;
     margin-right: 1.5rem;

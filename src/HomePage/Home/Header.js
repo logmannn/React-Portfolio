@@ -103,7 +103,7 @@ class Header extends Component {
   render() {
     return (
       <NavContent>
-        <div className="header_content">
+        <div className="header_content main_content">
           <Logo />
           <NavLinks>
             <NavLink className="NavLink" href="#work">
