@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Linkedin, Github, Email } from "../common/SocialIcons";
+import { Linkedin, Github, Email } from "../../common/SocialIcons";
 import styled from "styled-components";
 
 const SocialCenter = styled.div`

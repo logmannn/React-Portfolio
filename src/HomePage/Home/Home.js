@@ -1,11 +1,22 @@
 import React, { Component } from "react";
-import "../App.css";
 import Intro from "./Intro";
 import SlideCover from "./SlideCover";
 import Loading from "./Loading";
 import Header from "./Header";
+import styled from "styled-components";
 
-class Portfolio extends Component {
+const InitialBackground = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  min-height: 380px;
+  background: #1c3e6d;
+`;
+
+class Home extends Component {
   state = { value: 0 };
 
   componentDidMount() {
@@ -15,6 +26,7 @@ class Portfolio extends Component {
   render() {
     return (
       <div className="App">
+        <InitialBackground />
         <Loading />
         <SlideCover />
         <Header />
@@ -24,4 +36,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default Home;

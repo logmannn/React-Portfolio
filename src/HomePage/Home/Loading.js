@@ -21,7 +21,10 @@ const Wrap = styled.div`
   top: 0;
   left: 0;
   right: 0;
+
   height: 100vh;
+  min-height: 380px;
+
   z-index: 1;
 `;
 

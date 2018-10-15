@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Arrow } from "../common/Arrow";
+import { Arrow } from "../../common/Arrow";
 import styled from "styled-components";
 import {
   Spring,
