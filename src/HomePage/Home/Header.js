@@ -107,6 +107,73 @@ const NavLink = styled(AnchorLink)`
   }
 `;
 
+const NavLink2 = styled.a`
+  color: #b0b2c3;
+
+  padding-bottom: 3px;
+  padding-top: 3px;
+
+  font-weight: bold;
+  font-size: 1.2rem;
+
+  margin-left: 2.5rem;
+
+  transition: all 0.5s ease;
+
+  position: relative;
+
+  display: inline-block;
+
+  overflow: hidden;
+
+  &:after {
+    content: " ";
+    width: 100%;
+    height: 3px;
+    background: #f25757;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: Underline3 0.3s forwards;
+  }
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 3px;
+    background: #235aa6;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: Underline4 0.6s forwards;
+  }
+
+  &:hover {
+    color: #fff;
+
+    &:hover:after {
+      content: " ";
+      width: 100%;
+      height: 3px;
+      background: #f25757;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: Underline 0.3s forwards;
+    }
+
+    &:hover:before {
+      content: " ";
+      width: 100%;
+      height: 3px;
+      background: #235aa6;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: Underline2 0.3s forwards;
+    }
+  }
+`;
+
 const TopLogo = styled.div`
   @media only screen and (max-width: 640px) {
     display: none;
@@ -129,9 +196,9 @@ class Header extends Component {
                 Projects
               </span>
             </NavLink>
-            <NavLink className="NavLink" href="mailto:logantanous@gmail.com">
+            <NavLink2 className="NavLink" href="mailto:logantanous@gmail.com">
               Contact
-            </NavLink>
+            </NavLink2>
           </NavLinks>
         </div>
       </NavContent>
