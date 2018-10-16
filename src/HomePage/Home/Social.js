@@ -58,7 +58,7 @@ export default class Social extends Component {
           <SocialIcon href="https://www.linkedin.com/in/logantanous/">
             <Linkedin />
           </SocialIcon>
-          <SocialIcon href="#">
+          <SocialIcon href="mailto:logantanous@gmail.com">
             <Email />
           </SocialIcon>
         </SocialWrapper>

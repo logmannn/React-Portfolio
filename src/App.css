@@ -342,6 +342,10 @@ a {
   position: absolute;
 }
 
+.main_content {
+  width: 100%;
+}
+
 @media only screen and (max-height: 500px) {
   .letter {
     max-height: 245px;
@@ -359,7 +363,8 @@ a {
 
 @media only screen and (min-width: 75em) {
   .main_content {
-    width: 1170px;
+    width: 100%;
+    max-width: 1170px;
   }
 }
 
@@ -387,8 +392,6 @@ a {
 
   .main_content {
     width: 100%;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
   }
 }
 

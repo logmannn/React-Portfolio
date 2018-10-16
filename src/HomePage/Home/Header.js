@@ -30,6 +30,9 @@ const NavLinks = styled.div`
   align-items: center;
 
   height: 100%;
+
+  margin-left: 1rem;
+  margin-right: 1rem;
 `;
 
 const NavLink = styled.a`

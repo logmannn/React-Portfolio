@@ -4,9 +4,8 @@ import Button from "../../common/Button";
 
 const Img = styled.a`
   width: 100%;
-  height: 480px;
-  max-width: 936px;
-  max-height: 480px;
+  height: 391px;
+  max-width: 757px;
 
   position: relative;
 
@@ -17,8 +16,8 @@ const Img = styled.a`
   filter: alpha(opacity=40); /* msie */
   background-color: #000;
 
-  margin-top: 4.5rem;
-  margin-bottom: 4.5rem;
+  margin-top: 4.4rem;
+  margin-bottom: 4.4rem;
 
   color: white;
 
@@ -31,14 +30,76 @@ const Img = styled.a`
   padding-right: 5.6rem;
   padding-bottom: 5.6rem;
 
+  transition: all 0.35s ease;
+
   &:nth-child(odd) {
     transform: translateX(25px);
+    text-align: left;
   }
 
   &:nth-child(even) {
     transform: translateX(-25px);
 
     align-items: flex-end;
+
+    text-align: right;
+  }
+
+  @media only screen and (max-width: 1199px) {
+    max-width: 621px;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    &:nth-child(odd),
+    &:nth-child(even) {
+      transform: translateX(0);
+    }
+  }
+
+  @media only screen and (max-width: 1000px) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  @media only screen and (max-width: 899px) {
+    height: 331px;
+  }
+
+  @media only screen and (max-width: 850px) {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  @media only screen and (max-width: 800px) {
+    width: calc(100% - 16rem);
+  }
+
+  @media only screen and (max-width: 660px) {
+    height: 280px;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 1rem
+    padding-bottom: 1rem;
+    
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    width: calc(100% - 4rem);
+
+    &:nth-child(odd),
+    &:nth-child(even) {
+      text-align: center;
+
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 
@@ -63,6 +124,20 @@ const Title = styled.div`
   font-weight: bold;
 
   margin-bottom: 1rem;
+
+  text-align: right;
+
+  @media only screen and (max-width: 899px) {
+    font-size: 2.3rem;
+  }
+
+  @media only screen and (max-width: 699px) {
+    font-size: 2rem;
+  }
+
+  @media only screen and (max-width: 660px) {
+    text-align: center;
+  }
 `;
 
 const Description = styled.div`
@@ -70,6 +145,10 @@ const Description = styled.div`
   font-size: 1.2rem;
 
   margin-bottom: 1rem;
+
+  @media only screen and (max-width: 660px) {
+    font-size: 1rem;
+  }
 `;
 
 export default class Project extends Component {

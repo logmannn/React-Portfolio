@@ -15,7 +15,14 @@ const Center = styled.div`
   flex-direction: column;
   align-items: center;
 
-  padding-top: 4.5rem;
+  padding-top: 4.4rem;
+
+  width: 100%;
+  max-width: 100%;
+
+  @media only screen and (max-width: 660px) {
+    padding-top: 2rem;
+  }
 `;
 
 const CenterStyleLine = styled.div`
@@ -76,7 +83,7 @@ class Projects extends Component {
       },
       {
         id: 4,
-        title: "The Dyrt Gear",
+        title: "The Dyrt Gear Portal",
         image: require("./images/thedyrt.com-gear.png"),
         description: "A section of The Dyrt's ember site that I built",
         link: "https://thedyrt.com/gear/"
