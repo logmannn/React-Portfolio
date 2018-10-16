@@ -61,10 +61,32 @@ class Projects extends Component {
       },
       {
         id: 2,
-        title: "DevConnector",
-        image: require("./images/thawing-island-18705.herokuapp.com.png"),
-        description: "Description",
-        link: "https://github.com/logmannn/devconnector"
+        title: "React Dynamic Movie Viewer",
+        image: require("./images/movie-viewer.png"),
+        description: "React app that shows movie information dynamically",
+        link: "https://github.com/logmannn/React-dynamic-movie-viewer"
+      },
+      {
+        id: 3,
+        title: "PDX 2018 Tech Crawl Map",
+        image: require("./images/PDX-2018-Tech-Crawl.png"),
+        description:
+          "A tool for the TechCrawl 2018 meetup users to view map items. Built with Rivets and the MapBox api",
+        link: "https://github.com/logmannn/PDX-2018-Tech-Crawl"
+      },
+      {
+        id: 4,
+        title: "The Dyrt Gear",
+        image: require("./images/thedyrt.com-gear.png"),
+        description: "A section of The Dyrt's ember site that I built",
+        link: "https://thedyrt.com/gear/"
+      },
+      {
+        id: 5,
+        title: "Job Scraping",
+        image: require("./images/job-scraping.png"),
+        description: "A Ruby app used to search multiple job and social sites",
+        link: "https://github.com/logmannn/job_scraping"
       }
     ];
 
@@ -73,7 +95,7 @@ class Projects extends Component {
         <CenterStyleLine>
           <CenterLine />
         </CenterStyleLine>
-        <Title text="Latest Works" />
+        <Title text="Latest Work" />
         <ProjectItemsWrapper className="ProjectItemsWrapper">
           {ProjectItems.map(project => (
             <Project key={project.id} project={project} />

@@ -1,13 +1,8 @@
 import React, { Component } from "react";
-import { Arrow } from "../../common/Arrow";
+import Button from "../../common/Button";
 import styled from "styled-components";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import {
-  Spring,
-  animated,
-  AnimatedValue,
-  controller as spring
-} from "react-spring";
+import { Spring, animated } from "react-spring";
 
 const ContentWrapper = styled.div`
   width: 100%;
@@ -57,31 +52,6 @@ const Introduction = styled.div`
   overflow: hidden;
 `;
 
-const AboutButton = styled.div`
-  white-space: nowrap;
-
-  margin-bottom: 1rem;
-
-  display: block;
-
-  overflow: hidden;
-
-  position: relative;
-
-  font-weight: bold;
-
-  cursor: pointer;
-  pointer-events: all;
-
-  max-width: 148px;
-
-  transition: max-width 0.25s ease;
-
-  &:hover {
-    max-width: 155px;
-  }
-`;
-
 const Title = styled.div`
   font-style: italic;
 
@@ -123,33 +93,6 @@ const SlideAnimation = styled(animated.div)`
   display: inline-block;
 
   transition: transform cubic-bezier(0.03, 0.05, 0.84);
-`;
-
-const AboutButtonAnimation = styled(animated.div)`
-  display: inline-block;
-
-  background: linear-gradient(270deg, #f06449, #ef3636);
-  transition: background 0.25s ease;
-
-  &:hover {
-    background: linear-gradient(270deg, #f06449, #ef3636);
-  }
-`;
-
-const AboutText = styled(AnchorLink)`
-  z-index: 2;
-  position: relative;
-
-  display: flex;
-
-  padding-left: 1.6rem;
-  padding-right: 1.6rem;
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
-
-  overflow: hidden;
-
-  color: white;
 `;
 
 const BottomArrowWrapper = styled.div`
@@ -237,16 +180,6 @@ const CssArrow = styled.div`
   background: white;
 `;
 
-const animation = new AnimatedValue();
-const hover = () =>
-  spring(animation, {
-    to: "linear-gradient(270deg, #ef3636, #f06449)"
-  }).start();
-const unhover = () =>
-  spring(animation, {
-    to: "linear-gradient(270deg, #f06449, #ef3636)"
-  }).start();
-
 export default class Content extends Component {
   render() {
     return (
@@ -285,32 +218,7 @@ export default class Content extends Component {
                 )}
               </Spring>
             </Title>
-            <AboutButton className="relative noOverflow">
-              <AboutButtonAnimation
-                onMouseOver={hover}
-                onMouseOut={unhover}
-                style={{ background: animation }}
-              >
-                <AboutText href="#projects">My Work</AboutText>{" "}
-                <Spring
-                  delay={200}
-                  from={{ transform: "translateX(0%)" }}
-                  to={{ transform: "translateX(101%)" }}
-                >
-                  {({ transform }) => (
-                    <SlideAnimation
-                      style={{
-                        transform
-                      }}
-                    />
-                  )}
-                </Spring>
-              </AboutButtonAnimation>
-
-              <span className="button-icon Arrow">
-                <Arrow />
-              </span>
-            </AboutButton>
+            <Button text="My Work" slide="true" />
           </Introduction>
         </ContentDiv>
         <BottomArrowWrapper>

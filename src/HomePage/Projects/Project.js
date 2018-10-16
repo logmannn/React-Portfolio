@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import Button from "../../common/Button";
 
 const Img = styled.a`
   width: 100%;
@@ -36,6 +37,8 @@ const Img = styled.a`
 
   &:nth-child(even) {
     transform: translateX(-25px);
+
+    align-items: flex-end;
   }
 `;
 
@@ -77,6 +80,7 @@ export default class Project extends Component {
       <>
         <Img
           href={link}
+          target="_blank"
           style={{
             backgroundImage: `url(
             ${image}
@@ -86,6 +90,7 @@ export default class Project extends Component {
         >
           <Title>{title}</Title>
           <Description>{description}</Description>
+          <Button text="View Project" slide="false" />
           <Filter />
         </Img>
       </>

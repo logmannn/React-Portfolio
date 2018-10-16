@@ -333,6 +333,15 @@ a {
   text-decoration: none;
 }
 
+.noOverflow {
+  overflow: hidden;
+}
+
+.ButtonMarginRight {
+  right: -26px;
+  position: absolute;
+}
+
 @media only screen and (max-height: 500px) {
   .letter {
     max-height: 245px;
