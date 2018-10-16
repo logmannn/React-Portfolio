@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import Delay from "react-delay-render";
 import Logo from "../../common/Logo";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const NavContent = styled.div`
   position: absolute;
@@ -33,9 +34,13 @@ const NavLinks = styled.div`
 
   margin-left: 1rem;
   margin-right: 1rem;
+
+  @media only screen and (max-width: 640px) {
+    flex-direction: column;
+  }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled(AnchorLink)`
   color: #b0b2c3;
 
   padding-bottom: 3px;
@@ -102,19 +107,29 @@ const NavLink = styled.a`
   }
 `;
 
+const TopLogo = styled.div`
+  @media only screen and (max-width: 640px) {
+    display: none;
+
+    border: 5px solid red;
+  }
+`;
+
 class Header extends Component {
   render() {
     return (
       <NavContent>
         <div className="header_content main_content">
-          <Logo />
+          <TopLogo>
+            <Logo />
+          </TopLogo>
           <NavLinks>
-            <NavLink className="NavLink" href="#work">
+            <NavLink className="NavLink" href="#projects">
               <span style={{ zIndex: "2", position: "relative" }}>
                 Projects
               </span>
             </NavLink>
-            <NavLink className="NavLink" href="#contact">
+            <NavLink className="NavLink" href="mailto:logantanous@gmail.com">
               Contact
             </NavLink>
           </NavLinks>

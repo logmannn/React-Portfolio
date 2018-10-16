@@ -3,7 +3,6 @@ import Title from "./Title";
 import Project from "./Project";
 import Delay from "react-delay-render";
 import styled from "styled-components";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Center = styled.div`
   text-align: center;

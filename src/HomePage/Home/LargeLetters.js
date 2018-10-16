@@ -62,7 +62,7 @@ class LargeLetters extends Component {
       <LettersCenter>
         <LettersWrapper>
           <LetterWrapper>
-            <div className="letter">
+            <div className="letter large-letter">
               <LetterLWrapper
                 className="overlay"
                 animate={true}

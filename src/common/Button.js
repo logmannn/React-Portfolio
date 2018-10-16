@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import classnames from "classnames";
 import {
   Spring,
   animated,
