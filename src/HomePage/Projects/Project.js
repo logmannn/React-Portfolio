@@ -156,23 +156,21 @@ export default class Project extends Component {
     const { image, title, description, link } = this.props.project;
 
     return (
-      <>
-        <Img
-          href={link}
-          target="_blank"
-          style={{
-            backgroundImage: `url(
+      <Img
+        href={link}
+        target="_blank"
+        style={{
+          backgroundImage: `url(
             ${image}
           )`
-          }}
-          alt={title}
-        >
-          <Title>{title}</Title>
-          <Description>{description}</Description>
-          <Button text="View Project" slide="false" />
-          <Filter />
-        </Img>
-      </>
+        }}
+        alt={title}
+      >
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+        <Button text="View Project" slide="false" />
+        <Filter />
+      </Img>
     );
   }
 }

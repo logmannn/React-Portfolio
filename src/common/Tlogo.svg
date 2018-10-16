@@ -1,0 +1,12 @@
+<svg viewBox='2.8 6.8 17.4 14'>
+  <clipPath id='cut-off-bottom'>
+    <polygon points='3.3,8.95 3.88,7 19.87,7 18.36,12 10,24' />
+  </clipPath>
+  <path
+    stroke='#FFF'
+    strokeWidth='1.9'
+    fill='none'
+    d='M10,22L14.205,8L3,8L20,8'
+    clipPath='url(#cut-off-bottom)'
+  />
+</svg>

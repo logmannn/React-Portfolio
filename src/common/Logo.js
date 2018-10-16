@@ -7,6 +7,8 @@ const LettersCenter = styled.div`
   justify-content: center;
   position: absolute;
   z-index: 5;
+
+  margin-left: 1rem;
 `;
 
 const LettersWrapper = styled.div`
