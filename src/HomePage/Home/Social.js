@@ -52,10 +52,13 @@ export default class Social extends Component {
     return (
       <SocialCenter>
         <SocialWrapper>
-          <SocialIcon href="https://github.com/logmannn">
+          <SocialIcon href="https://github.com/logmannn" target="_blank">
             <Github />
           </SocialIcon>
-          <SocialIcon href="https://www.linkedin.com/in/logantanous/">
+          <SocialIcon
+            href="https://www.linkedin.com/in/logantanous/"
+            target="_blank"
+          >
             <Linkedin />
           </SocialIcon>
           <SocialIcon href="mailto:logantanous@gmail.com">

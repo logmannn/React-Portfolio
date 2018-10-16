@@ -63,8 +63,13 @@ class Footer extends Component {
           <Logo />
         </LogoWrapper>
         <NavLinks className="coolUnderline">
-          <NavLink href="https://github.com/logmannn">GitHub</NavLink>
-          <NavLink href="https://www.linkedin.com/in/logantanous/">
+          <NavLink href="https://github.com/logmannn" target="_blank">
+            GitHub
+          </NavLink>
+          <NavLink
+            href="https://www.linkedin.com/in/logantanous/"
+            target="_blank"
+          >
             Linkedin
           </NavLink>
           <NavLink href="mailto:logantanous@gmail.com">Contact</NavLink>
