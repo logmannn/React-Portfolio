@@ -18,5 +18,4 @@ class Intro extends Component {
   }
 }
 
-// export default Intro;
 export default Delay({ delay: 1500 })(Intro);
