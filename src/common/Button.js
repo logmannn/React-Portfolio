@@ -9,6 +9,10 @@ import {
 } from "react-spring";
 import { Arrow } from "./Arrow";
 
+const AboutButtonWrapper = styled.div`
+  width: 155px;
+`;
+
 const AboutButton = styled.div`
   white-space: nowrap;
 
@@ -41,8 +45,57 @@ const AboutButtonAnimation = styled(animated.div)`
   background: linear-gradient(270deg, #f06449, #ef3636);
   transition: background 0.25s ease;
 
+  position: relative;
+  top: 0;
+  left: 0;
+
+  overflow: hidden;
+
+  &:after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: #f25757;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: Underline3 0.3s forwards;
+  }
+  &:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    background: #235aa6;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: Underline4 0.6s forwards;
+  }
+
   &:hover {
-    background: linear-gradient(270deg, #f06449, #ef3636);
+    color: #fff;
+
+    &:hover:after {
+      content: " ";
+      width: 100%;
+      height: 100%;
+      background: #f25757;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: Underline 0.3s forwards;
+    }
+
+    &:hover:before {
+      content: " ";
+      width: 100%;
+      height: 100%;
+      background: #235aa6;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      animation: Underline2 0.3s forwards;
+    }
   }
 `;
 
@@ -110,44 +163,48 @@ const SlideAnimation = styled(animated.div)`
 export default class Button extends Component {
   render() {
     return (
-      <AboutButton
-        className={"relative " + (this.props.slide === "true" && "noOverflow")}
-      >
-        <AboutButtonAnimation
-          onMouseOver={hover}
-          onMouseOut={unhover}
-          style={{ background: animation }}
-        >
-          {this.props.slide === "true" ? (
-            <>
-              <AboutText href="#projects">{this.props.text}</AboutText>
-              <Spring
-                delay={200}
-                from={{ transform: "translateX(0%)" }}
-                to={{ transform: "translateX(101%)" }}
-              >
-                {({ transform }) => (
-                  <SlideAnimation
-                    style={{
-                      transform
-                    }}
-                  />
-                )}
-              </Spring>
-            </>
-          ) : (
-            <AboutTextDiv>{this.props.text}</AboutTextDiv>
-          )}
-        </AboutButtonAnimation>
-        <span
+      <AboutButtonWrapper>
+        <AboutButton
           className={
-            "button-icon Arrow " +
-            (this.props.slide === "false" && "ButtonMarginRight")
+            "relative " + (this.props.slide === "true" && "noOverflow")
           }
         >
-          <Arrow />
-        </span>
-      </AboutButton>
+          <AboutButtonAnimation
+            onMouseOver={hover}
+            onMouseOut={unhover}
+            style={{ background: animation }}
+          >
+            {this.props.slide === "true" ? (
+              <>
+                <AboutText href="#projects">{this.props.text}</AboutText>
+                <Spring
+                  delay={200}
+                  from={{ transform: "translateX(0%)" }}
+                  to={{ transform: "translateX(101%)" }}
+                >
+                  {({ transform }) => (
+                    <SlideAnimation
+                      style={{
+                        transform
+                      }}
+                    />
+                  )}
+                </Spring>
+              </>
+            ) : (
+              <AboutTextDiv>{this.props.text}</AboutTextDiv>
+            )}
+          </AboutButtonAnimation>
+          <span
+            className={
+              "button-icon Arrow " +
+              (this.props.slide === "false" && "ButtonMarginRight")
+            }
+          >
+            <Arrow />
+          </span>
+        </AboutButton>
+      </AboutButtonWrapper>
     );
   }
 }
