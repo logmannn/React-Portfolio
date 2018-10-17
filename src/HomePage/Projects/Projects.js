@@ -55,6 +55,25 @@ const ProjectItemsWrapper = styled.div`
   flex-direction: column;
 `;
 
+const AboutMe = styled.div`
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  max-width: 650px;
+  line-height: 1.5rem;
+
+  @media only screen and (max-width: 660px) {
+    margin-top: 1.6rem;
+    margin-bottom: 1.6rem;
+  }
+`;
+
+const B = styled.span`
+  font-weight: bold;
+  color: #f06449;
+`;
+
 class Projects extends Component {
   render() {
     const ProjectItems = [
@@ -96,11 +115,24 @@ class Projects extends Component {
       }
     ];
 
+    function getAge(d1, d2) {
+      d2 = d2 || new Date();
+      var diff = d2.getTime() - d1.getTime();
+      return Math.floor(diff / (1000 * 60 * 60 * 24 * 365.25));
+    }
+
     return (
       <Center id="projects" className="main_content">
         <CenterStyleLine>
           <CenterLine />
         </CenterStyleLine>
+        <Title text="About Me" />
+        <AboutMe>
+          I am Logan Tanous, a {getAge(new Date(1993, 2, 19))} year old{" "}
+          <B>Web Developer</B> who is available <B>for hire</B>. I love working
+          in React and Redux, Ember, Vanilla JS, SCSS and web scraping. When I
+          am not coding, you'll find me hiking or playing virtual reality games.
+        </AboutMe>
         <Title text="Latest Work" />
         <ProjectItemsWrapper className="ProjectItemsWrapper">
           {ProjectItems.map(project => (
