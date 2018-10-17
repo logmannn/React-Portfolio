@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import {
-  Spring,
-  animated,
-  AnimatedValue,
-  controller as spring
-} from "react-spring";
+import { Spring, animated, controller as spring } from "react-spring";
 import { Arrow } from "./Arrow";
 
 const AboutButtonWrapper = styled.div`
@@ -133,16 +128,6 @@ const AboutTextDiv = styled.div`
   color: white;
 `;
 
-const animation = new AnimatedValue();
-const hover = () =>
-  spring(animation, {
-    to: "linear-gradient(270deg, #ef3636, #f06449)"
-  }).start();
-const unhover = () =>
-  spring(animation, {
-    to: "linear-gradient(270deg, #f06449, #ef3636)"
-  }).start();
-
 const SlideAnimation = styled(animated.div)`
   background: white;
 
@@ -169,11 +154,7 @@ export default class Button extends Component {
             "relative " + (this.props.slide === "true" && "noOverflow")
           }
         >
-          <AboutButtonAnimation
-            onMouseOver={hover}
-            onMouseOut={unhover}
-            style={{ background: animation }}
-          >
+          <AboutButtonAnimation>
             {this.props.slide === "true" ? (
               <>
                 <AboutText href="#projects">{this.props.text}</AboutText>
