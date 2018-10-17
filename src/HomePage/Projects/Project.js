@@ -30,8 +30,6 @@ const Img = styled.a`
   padding-right: 5.6rem;
   padding-bottom: 5.6rem;
 
-  transition: all 0.35s ease;
-
   &:nth-child(odd) {
     transform: translateX(25px);
     text-align: left;
@@ -43,6 +41,17 @@ const Img = styled.a`
     align-items: flex-end;
 
     text-align: right;
+  }
+  
+  & > div:first-child {
+    transform: scale(1);
+    transition: all 0.35s ease-in;
+  }
+
+  &:hover > div:first-child {
+    transform: scale(1.05);
+
+    transition: all 0.35s ease;
   }
 
   @media only screen and (max-width: 1199px) {
@@ -125,7 +134,7 @@ const Title = styled.div`
 
   margin-bottom: 1rem;
 
-  text-align: right;
+  /* text-align: right; */
 
   @media only screen and (max-width: 899px) {
     font-size: 2.3rem;
@@ -151,6 +160,13 @@ const Description = styled.div`
   }
 `;
 
+const Hover = styled.div`
+  display: inherit;
+
+  flex-direction: inherit;
+  align-items: inherit;
+`;
+
 export default class Project extends Component {
   render() {
     const { image, title, description, link } = this.props.project;
@@ -166,9 +182,11 @@ export default class Project extends Component {
         }}
         alt={title}
       >
-        <Title>{title}</Title>
-        <Description>{description}</Description>
-        <Button text="View Project" slide="false" />
+        <Hover>
+          <Title>{title}</Title>
+          <Description>{description}</Description>
+          <Button text="View Project" slide="false" />
+        </Hover>
         <Filter />
       </Img>
     );
