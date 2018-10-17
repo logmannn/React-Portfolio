@@ -131,6 +131,24 @@ canvas {
   }
 }
 
+@keyframes Underline5 {
+  from {
+    transform: translate(-100%);
+  }
+  to {
+    transform: translate(126%);
+  }
+}
+
+@keyframes Underline6 {
+  from {
+    transform: translate(126%);
+  }
+  to {
+    transform: translate(-105%);
+  }
+}
+
 .main {
   display: flex;
   align-items: center;

@@ -38,7 +38,7 @@ const AboutButtonAnimation = styled(animated.div)`
   display: inline-block;
 
   background: linear-gradient(270deg, #f06449, #ef3636);
-  transition: background 0.25s ease;
+  transition: all 0.25s ease;
 
   position: relative;
   top: 0;
@@ -48,49 +48,54 @@ const AboutButtonAnimation = styled(animated.div)`
 
   &:after {
     content: " ";
-    width: 100%;
+    width: 200%;
     height: 100%;
-    background: #f25757;
+    background-color: #26408b;
+    background: linear-gradient(270deg, #235aa6, #213777);
+
     position: absolute;
     left: 0;
     bottom: 0;
-    animation: Underline3 0.3s forwards;
+    animation: Underline6 1s forwards;
   }
-  &:before {
-    content: " ";
-    width: 100%;
-    height: 100%;
-    background: #235aa6;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    animation: Underline4 0.6s forwards;
-  }
+  // &:before {
+  //   content: " ";
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: #1b2e63;
+  //   background: linear-gradient(270deg, #235aa6, #101b3b);
+  //   position: absolute;
+  //   left: 0;
+  //   bottom: 0;
+  //   animation: Underline6 1s forwards;
+  // }
 
   &:hover {
     color: #fff;
 
     &:hover:after {
       content: " ";
-      width: 100%;
+      width: 200%;
       height: 100%;
-      background: #f25757;
+      background-color: #26408b;
+      background: linear-gradient(270deg, #235aa6, #213777);
       position: absolute;
       left: 0;
       bottom: 0;
-      animation: Underline 0.3s forwards;
+      animation: Underline5 1s forwards;
     }
 
-    &:hover:before {
-      content: " ";
-      width: 100%;
-      height: 100%;
-      background: #235aa6;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      animation: Underline2 0.3s forwards;
-    }
+    // &:hover:before {
+    //   content: " ";
+    //   width: 80%;
+    //   height: 100%;
+    //   background-color: #1b2e63;
+    //   background: linear-gradient(270deg, #235aa6, #101b3b);
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: 0;
+    //   animation: Underline5 1s forwards;
+    // }
   }
 `;
 
