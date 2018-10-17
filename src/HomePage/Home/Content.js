@@ -62,6 +62,12 @@ const Title = styled.div`
   position: relative;
 
   pointer-events: all;
+
+  @media only screen and (max-width: 769px) {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+  }
 `;
 
 const DevName = styled.div`
@@ -152,7 +158,7 @@ const BottomArrow = styled(AnchorLink)`
     margin-right: 0;
     backface-visibility: hidden;
     transition: all 0.3s;
-    animation: animation: arrowUnHoverBefore .3s forwards;    
+    animation:  arrowUnHoverBefore .3s forwards;    
   }
 
   &:after {
@@ -169,7 +175,7 @@ const BottomArrow = styled(AnchorLink)`
     margin-right: 0;
     backface-visibility: hidden;
     transition: all 0.3s;
-    animation: animation: arrowUnHoverAfter .3s forwards;
+    animation:  arrowUnHoverAfter .3s forwards;
   }
 `;
 

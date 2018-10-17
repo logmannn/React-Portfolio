@@ -29,7 +29,6 @@ const AboutButton = styled.div`
   transition: all 0.25s ease;
 
   &:hover {
-    // max-width: 155px;
     padding-right: 0.5rem;
   }
 `;
@@ -58,17 +57,6 @@ const AboutButtonAnimation = styled(animated.div)`
     bottom: 0;
     animation: Underline6 1s forwards;
   }
-  // &:before {
-  //   content: " ";
-  //   width: 100%;
-  //   height: 100%;
-  //   background-color: #1b2e63;
-  //   background: linear-gradient(270deg, #235aa6, #101b3b);
-  //   position: absolute;
-  //   left: 0;
-  //   bottom: 0;
-  //   animation: Underline6 1s forwards;
-  // }
 
   &:hover {
     color: #fff;
@@ -84,18 +72,10 @@ const AboutButtonAnimation = styled(animated.div)`
       bottom: 0;
       animation: Underline5 1s forwards;
     }
+  }
 
-    // &:hover:before {
-    //   content: " ";
-    //   width: 80%;
-    //   height: 100%;
-    //   background-color: #1b2e63;
-    //   background: linear-gradient(270deg, #235aa6, #101b3b);
-    //   position: absolute;
-    //   left: 0;
-    //   bottom: 0;
-    //   animation: Underline5 1s forwards;
-    // }
+  @media only screen and (max-width: 769px) {
+    display: flex;
   }
 `;
 
@@ -115,6 +95,15 @@ const AboutText = styled(AnchorLink)`
   color: white;
 
   width: 100%;
+
+  @media only screen and (max-width: 769px) {
+    padding-left: 0;
+    padding-right: 0;
+
+    justify-content: center;
+
+    height: 100%;
+  }
 `;
 
 const AboutTextDiv = styled.div`

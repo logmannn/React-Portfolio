@@ -176,9 +176,8 @@ const NavLink2 = styled.a`
 
 const TopLogo = styled.div`
   @media only screen and (max-width: 640px) {
-    display: none;
-
-    border: 5px solid red;
+    position: absolute;
+    top: -100px;
   }
 `;
 
