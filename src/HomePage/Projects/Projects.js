@@ -82,14 +82,14 @@ class Projects extends Component {
         title: "DevConnector",
         image: require("./images/thawing-island-18705.herokuapp.com-dashboard.png"),
         description: "Linkedin-esque full stack MERN application",
-        link: "https://github.com/logmannn/devconnector"
+        link: "https://thawing-island-18705.herokuapp.com"
       },
       {
         id: 2,
         title: "React Dynamic Movie Viewer",
         image: require("./images/movie-viewer.png"),
         description: "React app that shows movie information dynamically",
-        link: "https://github.com/logmannn/React-dynamic-movie-viewer"
+        link: "https://determined-agnesi-999b19.netlify.com/"
       },
       {
         id: 3,
