@@ -76,6 +76,20 @@ body {
   background-color: #f1f1f1;
 }
 
+.disable-css-transitions:after {
+  opacity: 0;
+}
+.disable-css-transitions:before {
+  opacity: 0;
+}
+
+.disable-css-transitions:hover:after {
+  opacity: 0;
+}
+.disable-css-transitions:hover:before {
+  opacity: 0;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

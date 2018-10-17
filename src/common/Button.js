@@ -159,7 +159,7 @@ export default class Button extends Component {
             "relative " + (this.props.slide === "true" && "noOverflow")
           }
         >
-          <AboutButtonAnimation>
+          <AboutButtonAnimation className="AboutButtonAnimation disable-css-transitions">
             {this.props.slide === "true" ? (
               <>
                 <AboutText href="#projects">{this.props.text}</AboutText>

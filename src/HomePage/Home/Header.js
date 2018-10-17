@@ -191,12 +191,18 @@ class Header extends Component {
             <Logo />
           </TopLogo>
           <NavLinks>
-            <NavLink className="NavLink" href="#projects">
+            <NavLink
+              className="NavLink disable-css-transitions"
+              href="#projects"
+            >
               <span style={{ zIndex: "2", position: "relative" }}>
                 Projects
               </span>
             </NavLink>
-            <NavLink2 className="NavLink" href="mailto:logantanous@gmail.com">
+            <NavLink2
+              className="NavLink disable-css-transitions"
+              href="mailto:logantanous@gmail.com"
+            >
               Contact
             </NavLink2>
           </NavLinks>
