@@ -97,7 +97,7 @@ class Projects extends Component {
         image: require("./images/PDX-2018-Tech-Crawl.png"),
         description:
           "A tool for the TechCrawl 2018 meetup users to view map items. Built with Rivets and the MapBox api",
-        link: "https://github.com/logmannn/PDX-2018-Tech-Crawl"
+        link: "https://stupefied-wiles-609937.netlify.com"
       },
       {
         id: 4,
@@ -129,9 +129,9 @@ class Projects extends Component {
         <Title text="About Me" />
         <AboutMe>
           I am Logan Tanous, a {getAge(new Date(1993, 2, 19))} year old{" "}
-          <B>Web Developer</B> who is available <B>for hire</B>. I love working
-          in React and Redux, Ember, Vanilla JS, SCSS and web scraping. When I
-          am not coding, you'll find me hiking or playing virtual reality games.
+          <B>Web Developer</B> who is available <B>for hire</B>. I love React
+          and Redux, Ember, Vanilla JS, SCSS and web scraping. When I am not
+          coding, you'll find me hiking or playing virtual reality games.
         </AboutMe>
         <Title text="Latest Work" />
         <ProjectItemsWrapper className="ProjectItemsWrapper">
