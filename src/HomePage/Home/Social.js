@@ -37,7 +37,7 @@ const SocialWrapper = styled.div`
 const SocialIcon = styled.a`
   margin-top: 0.6rem;
   margin-bottom: 0.6rem;
-  opacity: 0.75
+  opacity: 0.75;
 
   fill: white;
 

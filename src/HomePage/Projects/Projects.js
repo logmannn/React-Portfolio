@@ -82,7 +82,7 @@ class Projects extends Component {
         title: "DevConnector",
         image: require("./images/thawing-island-18705.herokuapp.com-dashboard.png"),
         description: "Linkedin-esque full stack MERN application",
-        link: "https://thawing-island-18705.herokuapp.com"
+        link: "https://github.com/logmannn/devconnector"
       },
       {
         id: 2,
