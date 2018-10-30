@@ -78,11 +78,19 @@ class Projects extends Component {
   render() {
     const ProjectItems = [
       {
-        id: 1,
+        id: 0,
         title: "DevConnector",
         image: require("./images/thawing-island-18705.herokuapp.com-dashboard.png"),
         description: "Linkedin-esque full stack MERN application",
         link: "https://github.com/logmannn/devconnector"
+      },
+      {
+        id: 1,
+        title: "Marketing Automation Tool UI",
+        image: require("./images/Email-marketing.png"),
+        description:
+          "A work in progress UI for an upcoming email marketing automation tool built with React JS",
+        link: "https://gifted-joliot-23ea50.netlify.com/"
       },
       {
         id: 2,
