@@ -89,7 +89,7 @@ class Projects extends Component {
         title: "Marketing Automation Tool UI",
         image: require("./images/Email-marketing.png"),
         description:
-          "A work in progress Desktop UI for an upcoming email marketing automation tool built with React JS",
+          "A work in progress desktop UI for an upcoming email marketing automation tool built with React JS",
         link: "https://gifted-joliot-23ea50.netlify.com/"
       },
       {
